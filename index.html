@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Arin Bondre — aspiring mechanical and electrical engineer, Arcadia High School senior. Robotics, embedded systems, and hands-on engineering projects.">
+  <title>Arin Bondre | Engineering Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="nav-logo" href="#top">AB</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#professional">Professional</a></li>
+        <li><a href="#working">Working</a></li>
+        <li><a href="#hobbies">Hobbies</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Engineering Portfolio</p>
+        <h1>Arin Bondre</h1>
+        <p class="hero-lead">
+          Upcoming senior at <strong>Arcadia High School</strong>, pursuing
+          <strong>mechanical or electrical engineering</strong>. I build robots,
+          embedded systems, and practical hardware from concept to finished product.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#professional">View Projects</a>
+          <a class="btn btn-ghost" href="#about">About Me</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">About</span>
+          <h2>Building things that work in the real world</h2>
+        </div>
+        <div class="about-grid">
+          <p>
+            I am an engineering-focused student who combines mechanical fabrication,
+            circuit design, and embedded programming to solve practical problems.
+            From competing at the FIRST Robotics World Championship three years in a row
+            to designing custom PCBs and 3D-printed enclosures at home, I enjoy taking
+            projects from early prototypes to polished, usable systems.
+          </p>
+          <ul class="about-highlights">
+            <li>
+              <strong>Arcadia High School</strong>
+              <span>Upcoming senior, Class of 2027</span>
+            </li>
+            <li>
+              <strong>Intended Major</strong>
+              <span>Mechanical or Electrical Engineering</span>
+            </li>
+            <li>
+              <strong>FRC Team 2429</strong>
+              <span>Build team — navigation &amp; arm mechanisms</span>
+            </li>
+            <li>
+              <strong>UCLA Design &amp; Engineering Institute</strong>
+              <span>Summer engineering design program</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="professional" class="section projects-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Professional Projects</span>
+          <h2>Competition-level engineering &amp; portfolio work</h2>
+          <p class="section-desc">
+            High-impact projects with documented design process, team collaboration,
+            and real-world outcomes.
+          </p>
+        </div>
+
+        <article class="project-card project-card--featured project-card--full">
+          <div class="project-body">
+            <div class="project-tags">
+              <span>Robotics</span>
+              <span>Mechanical Design</span>
+              <span>Team Leadership</span>
+            </div>
+            <h3>FIRST Robotics — Team 2429</h3>
+            <figure class="project-thumbs">
+              <img src="images/robotics-competition.jpg" alt="FRC Team 2429 robot competing on the field at a regional championship" width="280" height="188">
+              <img src="images/robotics-impact-award.jpg" alt="FRC Team 2429 celebrating the 2024 FIRST Impact Award at Aerospace Valley Regional" width="280" height="188">
+            </figure>
+            <p>
+              Three consecutive appearances at the <strong>FIRST Robotics World Championship</strong>
+              as a member of the build team for FRC Team 2429 (La Cañada Engineering Club).
+              I contribute to mechanical design and fabrication, with hands-on work on
+              navigation systems and the robot's arm mechanism.
+            </p>
+            <p>
+              Our team earned the <strong>FIRST Impact Award</strong> at the 2024 Aerospace
+              Valley Regional — the highest honor recognizing teams that embody the mission
+              of FIRST through outreach, sustainability, and engineering excellence.
+            </p>
+            <ul class="project-details">
+              <li>World Championship — 3 consecutive years</li>
+              <li>Build team: navigation &amp; arm subsystems</li>
+              <li>Impact Award — Aerospace Valley Regional 2024</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="project-card project-card--full">
+          <div class="project-body">
+            <div class="project-tags">
+              <span>Embedded Systems</span>
+              <span>PCB Design</span>
+              <span>3D Printing</span>
+            </div>
+            <h3>Low-Cost CO&#8322; Monitoring Device</h3>
+            <figure class="project-thumbs">
+              <img src="images/co2-prototype.jpg" alt="Early breadboard prototype of the CO2 monitoring device with Arduino Nano and MQ135 sensor" width="280" height="188">
+              <img src="images/co2-meter.jpg" alt="Custom soldered PCB for a CO2 air quality monitoring device with LED indicators" width="280" height="188">
+            </figure>
+            <p>
+              A compact indoor air quality monitor built around an Arduino Nano and MQ135
+              gas sensor. The device continuously measures CO&#8322;-related levels and
+              communicates status through a three-stage LED system (green, yellow, red)
+              with an acoustic alarm at critical thresholds.
+            </p>
+            <p>
+              The project evolved from breadboard prototype to a permanent soldered PCB
+              with a custom-milled circuit board and 3D-printed enclosure — improving
+              durability, portability, and everyday usability.
+            </p>
+            <ul class="project-details">
+              <li>Threshold-based alerts: &lt;1000, 1000–2000, &gt;2000 ppm</li>
+              <li>Custom PCB fabrication &amp; sensor calibration</li>
+              <li>3D-printed housing for field use</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="working" class="section projects-section projects-section--alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Working Projects</span>
+          <h2>Active builds &amp; in-progress systems</h2>
+          <p class="section-desc">
+            Hands-on engineering work currently underway — from dual-axis tracking
+            to IoT-enabled monitoring.
+          </p>
+        </div>
+
+        <article class="project-card">
+          <figure class="project-image">
+            <img src="images/solar-tracker.jpg" alt="Arin Bondre soldering and assembling electronics for a solar tracking project at his workbench" width="800" height="600">
+          </figure>
+          <div class="project-body">
+            <div class="project-tags">
+              <span>Renewable Energy</span>
+              <span>Arduino</span>
+              <span>IoT / ESP32</span>
+            </div>
+            <h3>Dual-Axis Solar Tracker with IoT Monitoring</h3>
+            <p>
+              A dual-axis solar tracking system that dynamically aligns a panel with the
+              sun using four LDR sensors and servo motors controlled by Arduino. The design
+              uses closed-loop feedback to maximize energy capture throughout the day.
+            </p>
+            <p>
+              Phase two adds an <strong>ESP32-based IoT module</strong> for real-time cloud
+              monitoring of voltage, current, temperature, and light intensity — enabling
+              remote dashboards, data logging, and performance optimization.
+            </p>
+            <ul class="project-details">
+              <li>Phase 1: Dual-axis LDR + servo tracking (Arduino UNO)</li>
+              <li>Phase 2: ESP32 cloud monitoring (ThingSpeak / Arduino IoT Cloud)</li>
+              <li>3D-printed structural frame &amp; sensor integration</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="hobbies" class="section projects-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Personal Hobbies</span>
+          <h2>Beyond the workbench</h2>
+          <p class="section-desc">
+            Athletics and hands-on mechanical work that keep me active and curious.
+          </p>
+        </div>
+
+        <div class="hobby-grid">
+          <article class="hobby-card">
+            <figure class="hobby-image">
+              <img src="images/tennis.jpg" alt="Arcadia High School tennis team on court during a match" width="600" height="450">
+            </figure>
+            <div class="hobby-body">
+              <h3>Tennis</h3>
+              <p>
+                Varsity tennis player on the Arcadia High School team. Competing on
+                court builds discipline, focus under pressure, and teamwork — skills
+                that translate directly to engineering collaboration.
+              </p>
+            </div>
+          </article>
+
+          <article class="hobby-card">
+            <figure class="hobby-image">
+              <img src="images/mechanical-garage.jpg" alt="Arin Bondre working on a car elevated on a lift in an auto repair garage" width="600" height="450">
+            </figure>
+            <div class="hobby-body">
+              <h3>Mechanical Garage</h3>
+              <p>
+                Hands-on automotive work in a family garage — diagnosing systems,
+                performing repairs, and understanding how mechanical assemblies
+                function under real load. This practical experience complements my
+                interest in mechanical engineering.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-name">Arin Bondre</p>
+        <p class="footer-meta">Arcadia High School · Class of 2027</p>
+      </div>
+      <div class="footer-contact">
+        <p class="footer-note">Mechanical &amp; Electrical Engineering</p>
+        <a class="footer-email" href="mailto:arinbondre@gmail.com">arinbondre@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
