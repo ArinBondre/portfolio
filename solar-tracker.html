@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An Arduino-based solar tracker that uses LDR sensors and servo motors to align a panel toward brighter light.">
+  <title>Solar Tracker | Arin Bondre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="nav-logo" href="index.html#top">AB</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-projects-toggle" type="button" aria-expanded="false" aria-controls="project-menu">
+            Projects
+            <span class="nav-chevron" aria-hidden="true"></span>
+          </button>
+          <ul class="nav-submenu" id="project-menu">
+            <li><a href="co2-detector.html">CO₂ Detector</a></li>
+            <li><a href="solar-tracker.html" aria-current="page">Solar Tracker</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <button class="nav-projects-toggle" type="button" aria-expanded="false" aria-controls="teams-menu">
+            My Teams
+            <span class="nav-chevron" aria-hidden="true"></span>
+          </button>
+          <ul class="nav-submenu" id="teams-menu">
+            <li><a href="first-robotics.html">FIRST Robotics</a></li>
+            <li><a href="tennis.html">Tennis</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="project-detail-hero">
+      <div class="container">
+        <p class="hero-eyebrow">Renewable Energy · Arduino · Embedded Systems</p>
+        <h1>Solar Tracker</h1>
+        <p class="hero-lead">
+          An Arduino-based system that uses light sensors and servo motors to
+          orient a solar panel toward brighter light.
+        </p>
+        <a class="btn btn-ghost" href="index.html#about">Back to portfolio</a>
+      </div>
+    </section>
+
+    <section class="section project-detail-content">
+      <div class="container">
+        <article class="project-detail-panel">
+          <p class="section-label">Abstract</p>
+          <h2>Aligning a solar panel with incoming light</h2>
+          <p>
+            This project explores a solar tracker that adjusts a panel's
+            orientation in response to the direction of incoming light. Four
+            light-dependent resistors (LDRs) provide directional readings, and an
+            Arduino UNO uses the differences between those readings to control
+            servo motors. The prototype combines sensing, embedded control, and
+            a fabricated structure to help the panel follow brighter light.
+          </p>
+        </article>
+
+        <article class="project-detail-panel">
+          <p class="section-label">01 · Project objectives</p>
+          <h2>Use sensor feedback to orient the panel</h2>
+          <p>
+            The project explores closed-loop light sensing and mechanical
+            adjustment, using the Arduino to respond to changes in the light
+            measured around the panel.
+          </p>
+          <ul class="project-details">
+            <li>Use an Arduino UNO to control the solar panel's orientation</li>
+            <li>Compare four LDR readings and adjust the panel with servo motors</li>
+            <li>Integrate the sensors, controller, servos, panel, and support structure</li>
+          </ul>
+        </article>
+
+        <article class="project-detail-panel">
+          <p class="section-label">02 · System integration</p>
+          <h2>Light sensors and panel movement</h2>
+          <p>
+            In the tracking prototype, four LDRs are arranged as directional
+            sensors around the panel. Their readings are supplied to the Arduino,
+            which drives the horizontal and vertical servos. The mechanical frame
+            holds the panel and sensor assembly as it responds to changing light
+            direction.
+          </p>
+          <ul class="project-details">
+            <li><strong>Controller:</strong> Arduino UNO for the tracking system</li>
+            <li><strong>Light sensing:</strong> four LDRs arranged to compare light in the horizontal and vertical directions</li>
+            <li><strong>Actuation:</strong> two servo motors for horizontal and vertical positioning</li>
+            <li><strong>Structure:</strong> solar panel on a fabricated or 3D-printed support frame</li>
+          </ul>
+        </article>
+
+        <article class="project-detail-panel">
+          <p class="section-label">03 · Software &amp; math logic</p>
+          <h2>Use sensor differences to guide movement</h2>
+          <p>
+            The controller compares LDR readings from opposite sides. The
+            horizontal difference can be written as ΔH = Lright − Lleft, and
+            the vertical difference as ΔV = Lupper − Llower. If either
+            difference exceeds the system's balance tolerance, the matching
+            servo adjusts the panel toward the side receiving more light.
+            When the readings are close, the tracker can hold its position
+            instead of continuing to move.
+          </p>
+          <ul class="project-details">
+            <li><strong>Horizontal error:</strong> compare the left and right LDR readings</li>
+            <li><strong>Vertical error:</strong> compare the upper and lower LDR readings</li>
+            <li><strong>Control response:</strong> use each difference to choose the direction of the corresponding servo adjustment</li>
+            <li><strong>Balance:</strong> reduce unnecessary motion when paired readings are close</li>
+          </ul>
+        </article>
+
+        <article class="project-detail-panel">
+          <p class="section-label">04 · Final outcome</p>
+          <h2>A light-responsive solar tracking prototype</h2>
+          <p>
+            The project demonstrates a solar-tracking system in which LDR sensors
+            provide directional feedback, an Arduino processes the readings, and
+            servos reposition the panel. It brings mechanical construction and
+            embedded control together in a renewable-energy prototype.
+          </p>
+          <ul class="project-details">
+            <li>Four LDR sensors provide directional light readings</li>
+            <li>An Arduino UNO processes sensor differences</li>
+            <li>Servo motors reposition the solar panel in response</li>
+          </ul>
+          <p class="project-note">
+            LDR readings can be affected by overcast conditions and surrounding light,
+            while servo mechanisms are best suited to a small prototype.
+          </p>
+        </article>
+
+        <section class="project-detail-panel project-media-section" aria-labelledby="solar-media-title">
+          <p class="section-label">Project media</p>
+          <h2 id="solar-media-title">Photos &amp; video</h2>
+          <p>
+            The photo clip brings together all available JPG and HEIC images.
+            The original MOV recordings are combined into a silent video at 1.5× speed.
+          </p>
+          <div class="project-clips-grid solar-media-grid">
+            <figure class="project-clip-card" data-image-clip>
+              <img
+                class="project-clip-image"
+                data-clip-image
+                src="images/Solar%20Tracker/clips/solar-tracker-photos-poster.webp"
+                data-poster-src="images/Solar%20Tracker/clips/solar-tracker-photos-poster.webp"
+                data-animated-src="images/Solar%20Tracker/clips/solar-tracker-photos-clip.webp"
+                alt="Solar Tracker project photos showing 3D printing, electronics, and hands-on assembly"
+                width="960"
+                height="640"
+                loading="lazy"
+              >
+              <figcaption class="project-clip-caption">
+                <h3>01 · Project photos</h3>
+                <p>All nine project photos, including the HEIC images.</p>
+              </figcaption>
+              <div class="project-clip-actions">
+                <button class="btn btn-ghost project-clip-toggle" type="button" aria-pressed="false" aria-label="Play all Solar Tracker project photos" data-clip-toggle data-clip-name="all Solar Tracker project photos">Play clip</button>
+                <a class="project-clip-download" href="images/Solar%20Tracker/clips/solar-tracker-photos-clip.webp" download>Download clip</a>
+              </div>
+            </figure>
+
+            <figure class="project-clip-card project-video-card">
+              <video
+                class="project-clip-image"
+                controls
+                playsinline
+                preload="metadata"
+                muted
+                poster="images/Solar%20Tracker/clips/solar-tracker-video-poster.webp"
+                width="1280"
+                height="720"
+                aria-label="Silent Solar Tracker video compilation at 1.5 times speed"
+              >
+                <source src="images/Solar%20Tracker/clips/solar-tracker-build-video.mp4" type="video/mp4">
+                Your browser does not support embedded video. Use the download link below.
+              </video>
+              <figcaption class="project-clip-caption">
+                <h3>02 · Combined MOV footage</h3>
+                <p>Silent project footage at 1.5× speed.</p>
+              </figcaption>
+              <div class="project-clip-actions">
+                <a class="project-clip-download" href="images/Solar%20Tracker/clips/solar-tracker-build-video.mp4" download>Download video</a>
+              </div>
+            </figure>
+          </div>
+        </section>
+
+        <a class="btn btn-primary" href="co2-detector.html">Previous project: CO₂ Detector</a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <div class="container footer-inner"> 
+      <div>
+        <p class="footer-name">Arin Bondre</p>
+        <p class="footer-meta">Arcadia High School · Class of 2027</p>
+      </div>
+      <div class="footer-contact">
+        <p class="footer-note">Engineering</p>
+        <a class="footer-email" href="mailto:arinbondre@gmail.com">arinbondre@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Arin Bondre's varsity tennis experience with the Arcadia High School team.">
+  <title>Tennis | Arin Bondre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="nav-logo" href="index.html#top">AB</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-projects-toggle" type="button" aria-expanded="false" aria-controls="project-menu">
+            Projects
+            <span class="nav-chevron" aria-hidden="true"></span>
+          </button>
+          <ul class="nav-submenu" id="project-menu">
+            <li><a href="co2-detector.html">CO₂ Detector</a></li>
+            <li><a href="solar-tracker.html">Solar Tracker</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <button class="nav-projects-toggle" type="button" aria-expanded="false" aria-controls="teams-menu">
+            My Teams
+            <span class="nav-chevron" aria-hidden="true"></span>
+          </button>
+          <ul class="nav-submenu" id="teams-menu">
+            <li><a href="first-robotics.html">FIRST Robotics</a></li>
+            <li><a href="tennis.html" aria-current="page">Tennis</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="project-detail-hero team-detail-hero">
+      <div class="container">
+        <p class="hero-eyebrow">Tennis · Focus · Teamwork</p>
+        <h1>Arcadia High School Tennis</h1>
+        <p class="hero-lead">
+          I play varsity tennis for the Arcadia High School team. Competing on
+          court builds discipline, focus under pressure, and teamwork—qualities
+          I bring to engineering and collaboration as well.
+        </p>
+      </div>
+    </section>
+
+    <section class="section project-detail-content">
+      <div class="container">
+        <div class="team-page-gallery team-page-gallery--single" aria-label="Tennis photograph">
+          <figure>
+            <img src="images/tennis.jpg" alt="Arin Bondre competing with the Arcadia High School tennis team" width="1200" height="900">
+            <figcaption>Competing with the Arcadia High School tennis team.</figcaption>
+          </figure>
+        </div>
+        <article class="project-detail-panel">
+          <p class="section-label">My team</p>
+          <h2>Varsity tennis</h2>
+          <p>
+            Playing varsity tennis means working toward shared goals while
+            developing my own consistency and decision-making. Matches challenge
+            me to stay composed, adapt, and support my teammates—skills that are
+            valuable both on court and in collaborative engineering projects.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-name">Arin Bondre</p>
+        <p class="footer-meta">Arcadia High School · Class of 2027</p>
+      </div> 
+      <div class="footer-contact">
+        <p class="footer-note">Engineering</p>
+        <a class="footer-email" href="mailto:arinbondre@gmail.com">arinbondre@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

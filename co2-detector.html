@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore the design, sensor integration, alert logic, calibration, testing, and fabrication of an Arduino and MQ135 air-quality detector.">
+  <title>CO₂ Detector | Arin Bondre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="nav-logo" href="index.html#top">AB</a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-projects-toggle" type="button" aria-expanded="false" aria-controls="project-menu">
+            Projects
+            <span class="nav-chevron" aria-hidden="true"></span>
+          </button>
+          <ul class="nav-submenu" id="project-menu">
+            <li><a href="co2-detector.html" aria-current="page">CO₂ Detector</a></li>
+            <li><a href="solar-tracker.html">Solar Tracker</a></li>
+          </ul>
+        </li>
+        <li class="nav-dropdown">
+          <button class="nav-projects-toggle" type="button" aria-expanded="false" aria-controls="teams-menu">
+            My Teams
+            <span class="nav-chevron" aria-hidden="true"></span>
+          </button>
+          <ul class="nav-submenu" id="teams-menu">
+            <li><a href="first-robotics.html">FIRST Robotics</a></li>
+            <li><a href="tennis.html">Tennis</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="project-detail-hero">
+      <div class="container">
+        <p class="hero-eyebrow">Embedded Systems · PCB Design · 3D Printing</p>
+        <h1>CO₂ Detector</h1>
+        <p class="hero-lead">
+          A compact indoor air quality monitor that turns sensor readings into
+          clear visual and audible alerts, developed from a breadboard prototype
+          into a portable, custom-built device.
+        </p>
+        <a
+          class="project-pdf-preview"
+          href="images/Co2/One%20Pager%20CO%E2%82%82%20Detector.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open the one-page CO2 detector project brief PDF in a new tab"
+        >
+          <img
+            src="images/Co2/one-pager-preview.webp"
+            alt="Preview of the one-page CO2 detector project brief"
+            width="420"
+            height="560"
+          >
+          <span>Open one-page brief <span aria-hidden="true">↗</span></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section project-detail-content">
+      <div class="container">
+        <article class="project-detail-panel">
+          <p class="section-label">Abstract</p>
+          <h2>A practical indoor air-quality indicator</h2>
+          <p>
+            Indoor air quality can affect health, concentration, and comfort. This
+            project explores an accessible way to monitor air-quality-related
+            readings using an Arduino-based embedded system and an MQ135 gas sensor.
+            The device provides continuous readings and communicates threshold
+            categories through three LEDs, with an acoustic warning at the critical
+            level.
+          </p>
+          <p>
+            Custom PCB fabrication and a 3D-printed enclosure take the build beyond
+            a temporary breadboard prototype, improving its durability, portability,
+            and everyday usability. The project combines embedded programming,
+            electronics, calibration, and maker-oriented fabrication in a compact
+            environmental monitoring device.
+          </p>
+        </article>
+
+        <article class="project-detail-panel">
+          <p class="section-label">01 · Motivation &amp; objectives</p>
+          <h2>Why build an air-quality detector?</h2>
+          <p>
+            Elevated indoor CO₂ can be an indicator of insufficient ventilation
+            and limited air exchange. The goal was to build a simple device that
+            makes changing conditions easy to notice, without requiring users to
+            continuously interpret a numerical display.
+          </p>
+          <ul class="project-details">
+            <li>Estimate air-quality-related CO₂ levels with an MQ135 sensor</li>
+            <li>Show acceptable, cautionary, and critical ranges with green, yellow, and red LEDs</li>
+            <li>Sound a buzzer when readings enter the critical range</li>
+            <li>Move from temporary wiring to a soldered PCB and custom 3D-printed housing</li>
+          </ul>
+        </article>
+
+        <article class="project-detail-panel">
+          <p class="section-label">02 · Hardware &amp; sensor integration</p>
+          <h2>Accessible components, integrated into one system</h2>
+          <p>
+            The compact version is built around an Arduino Nano and an MQ135
+            air-quality sensor. Three LEDs provide at-a-glance status, and a buzzer
+            supplies an audible warning. The sensor is connected to 5V, ground, and
+            an analog input; the microcontroller reads its output and processes it
+            with an MQ135 software library to produce a CO₂-related, ppm-style
+            estimate.
+          </p>
+          <ul class="project-details">
+            <li>Arduino microcontroller, with an Arduino Nano in the compact build</li>
+            <li>MQ135 sensor connected to power, ground, and an analog input</li>
+            <li>Three status LEDs and an acoustic buzzer</li>
+            <li>Custom-fabricated PCB and 3D-printed enclosure</li>
+          </ul>
+        </article>
+
+        <article class="project-detail-panel">
+          <p class="section-label">03 · Software &amp; alert logic</p>
+          <h2>From sensor readings to clear feedback</h2>
+          <p>
+            The Arduino IDE was used to develop the firmware. Early tests displayed
+            raw sensor readings in the serial monitor to verify the electronics.
+            An MQ135 library was then used to convert sensor output into
+            CO₂-related estimates for threshold-based alerts.
+          </p>
+          <ul class="project-details">
+            <li><strong>Below 1000 ppm:</strong> green LED indicates the acceptable range</li>
+            <li><strong>1000–2000 ppm:</strong> yellow LED indicates that ventilation should be considered</li>
+            <li><strong>Above 2000 ppm:</strong> red LED and buzzer indicate the critical range</li>
+          </ul>
+          <p>
+            In the critical range, the buzzer is toggled in alternating cycles
+            rather than held on continuously. Measurement updates run less
+            frequently than buzzer updates, so the warning can remain responsive
+            without reading the sensor on every buzzer toggle.
+          </p>
+        </article>
+
+        <article class="project-detail-panel">
+          <p class="section-label">04 · Calibration &amp; testing</p>
+          <h2>Conditioning the sensor and checking the system</h2>
+          <p>
+            The MQ135 needs conditioning and calibration before its estimates can
+            be interpreted. The documented process included an initial burn-in
+            period of approximately 24–48 hours, followed by outdoor calibration
+            using an assumed fresh-air baseline of about 400 ppm. The sensor's R0
+            resistance parameter was sampled 500 times and averaged for use as a
+            calibration value in the program.
+          </p>
+          <p>
+            Testing progressed from confirming raw analog readings in the serial
+            monitor, to checking the converted values, and then verifying that LED
+            states and buzzer behavior changed with the programmed thresholds.
+            This staged approach helped check both the sensor integration and the
+            alert logic.
+          </p>
+          <p class="project-note">
+            The MQ135 is a general air-quality sensor, not a dedicated,
+            high-accuracy CO₂ instrument. Its ppm-style readings depend on
+            calibration and environmental conditions, so this project is best
+            understood as an experimental air-quality indicator rather than a
+            certified measurement device.
+          </p>
+        </article>
+
+        <article class="project-detail-panel">
+          <p class="section-label">05 · Prototype refinement</p>
+          <h2>From breadboard to a portable build</h2>
+          <p>
+            The initial assembly used a larger Arduino board, breadboard, and
+            jumper wires. That setup was useful for experiments, but it was bulky
+            and susceptible to loose connections. The electronics were later
+            migrated to a compact Arduino Nano and a soldered circuit board for a
+            more stable, portable assembly.
+          </p>
+          <p>
+            The custom PCB layout was prepared with vector-based design tools.
+            Copper paths were milled from copper-clad board, mounting and
+            component holes were drilled, and components were soldered in place.
+            A custom 3D-printed housing protects the electronics and keeps the
+            detector compact enough to move between locations.
+          </p>
+        </article>
+
+        <article class="project-detail-panel">
+          <p class="section-label">06 · Results &amp; next steps</p>
+          <h2>A working foundation, with room to improve</h2>
+          <p>
+            The completed prototype met its core goals: reading sensor output,
+            signaling three threshold categories with LEDs, and sounding an alert
+            in the critical range. The soldered PCB and custom enclosure improved
+            the physical stability and portability compared with the original
+            breadboard setup.
+          </p>
+          <p>
+            The main limitation is measurement precision: MQ135 readings vary
+            with calibration and environmental conditions. Possible future
+            improvements include a dedicated digital CO₂ sensor, a numerical
+            display, battery power, long-term data logging, and wireless or
+            smartphone connectivity.
+          </p>
+          <p>
+            The project is a useful proof of concept and a foundation for
+            experimenting with more accurate sensing, data collection, and
+            enclosure designs.
+          </p>
+        </article>
+
+        <section class="project-detail-panel project-media-section" aria-labelledby="build-media-title">
+          <p class="section-label">Build gallery</p>
+          <h2 id="build-media-title">The build in quick clips</h2>
+          <p>
+            Short animated clips made from project photos show the progression
+            from breadboard prototype to circuit assembly and finished enclosures.
+            A silent video combining the original MOV recordings follows the photo clips.
+          </p>
+          <div class="project-clips-grid">
+            <figure class="project-clip-card" data-image-clip>
+              <img
+                class="project-clip-image"
+                data-clip-image
+                src="images/co2/clips/prototype-build-poster.webp"
+                data-poster-src="images/co2/clips/prototype-build-poster.webp"
+                data-animated-src="images/co2/clips/prototype-build-clip.webp"
+                alt="CO₂ detector build progressing from breadboard wiring to air-quality and LED status tests"
+                width="960"
+                height="640"
+                loading="lazy"
+              >
+              <figcaption class="project-clip-caption">
+                <h3>01 · Breadboard prototype</h3>
+                <p>Breadboard wiring, sensor testing, and the detector's LED status indicators in action.</p>
+              </figcaption>
+              <div class="project-clip-actions">
+                <button class="btn btn-ghost project-clip-toggle" type="button" aria-pressed="false" aria-label="Play breadboard prototype clip" data-clip-toggle data-clip-name="breadboard prototype">Play clip</button>
+                <a class="project-clip-download" href="images/co2/clips/prototype-build-clip.webp" download>Download clip</a>
+              </div>
+            </figure>
+
+            <figure class="project-clip-card" data-image-clip>
+              <img
+                class="project-clip-image"
+                data-clip-image
+                src="images/co2/clips/circuit-build-poster.webp"
+                data-poster-src="images/co2/clips/circuit-build-poster.webp"
+                data-animated-src="images/co2/clips/circuit-build-clip.webp"
+                alt="CO₂ detector circuit assembly progressing from hand soldering to electronics fitted in the enclosure"
+                width="960"
+                height="640"
+                loading="lazy"
+              >
+              <figcaption class="project-clip-caption">
+                <h3>02 · Circuit assembly</h3>
+                <p>Hand soldering, the Arduino Nano and LED board, and electronics fitted into a printed case.</p>
+              </figcaption>
+              <div class="project-clip-actions">
+                <button class="btn btn-ghost project-clip-toggle" type="button" aria-pressed="false" aria-label="Play circuit assembly clip" data-clip-toggle data-clip-name="circuit assembly">Play clip</button>
+                <a class="project-clip-download" href="images/co2/clips/circuit-build-clip.webp" download>Download clip</a>
+              </div>
+            </figure>
+
+            <figure class="project-clip-card" data-image-clip>
+              <img
+                class="project-clip-image"
+                data-clip-image
+                src="images/co2/clips/enclosure-build-poster.webp"
+                data-poster-src="images/co2/clips/enclosure-build-poster.webp"
+                data-animated-src="images/co2/clips/enclosure-build-clip.webp"
+                alt="CO₂ detector enclosure prototypes, electronics and multiple portable detector builds"
+                width="960"
+                height="640"
+                loading="lazy"
+              >
+              <figcaption class="project-clip-caption">
+                <h3>03 · Enclosure &amp; finished builds</h3>
+                <p>From a printed case prototype to assembled, portable detector units.</p>
+              </figcaption>
+              <div class="project-clip-actions">
+                <button class="btn btn-ghost project-clip-toggle" type="button" aria-pressed="false" aria-label="Play enclosure and finished builds clip" data-clip-toggle data-clip-name="enclosure and finished builds">Play clip</button>
+                <a class="project-clip-download" href="images/co2/clips/enclosure-build-clip.webp" download>Download clip</a>
+              </div>
+            </figure>
+
+            <figure class="project-clip-card project-video-card">
+              <video
+                class="project-clip-image"
+                controls
+                playsinline
+                preload="metadata"
+                muted
+                poster="images/co2/clips/co2-build-video-poster.webp"
+                width="1280"
+                height="720"
+                aria-label="Silent video combining footage from the CO₂ detector build"
+              >
+                <source src="images/co2/co2-build-video.mp4" type="video/mp4">
+                Your browser does not support embedded video. Use the download link below.
+              </video>
+              <figcaption class="project-clip-caption">
+                <h3>04 · Video clip</h3>
+                <p>Original build footage combined into one silent video at 1.5× speed.</p>
+              </figcaption>
+              <div class="project-clip-actions">
+                <a class="project-clip-download" href="images/co2/co2-build-video.mp4" download>Download video</a>
+              </div>
+            </figure>
+          </div>
+        </section>
+
+        <p class="project-reference">
+          Project reference:
+          <a href="https://wiki.swablab.de/books/projekte/page/co2-melder" target="_blank" rel="noopener noreferrer">CO₂ Melder project notes</a>
+        </p>
+
+        <a class="btn btn-primary" href="solar-tracker.html">Next project: Solar Tracker</a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-name">Arin Bondre</p>
+        <p class="footer-meta">Arcadia High School · Class of 2027</p>
+      </div>
+      <div class="footer-contact">
+        <p class="footer-note">Engineering</p>
+        <a class="footer-email" href="mailto:arinbondre@gmail.com">arinbondre@gmail.com</a>
+      </div>
+    </div> 
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
