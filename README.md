@@ -6,7 +6,7 @@ The Projects menu includes dedicated pages for the [CO₂ Detector](./co2-detect
 
 ## Live website 
 
-**https://github.com/ArinBondre/portfolio/**
+**https://arinbondre.github.io/portfolio/**
 
 Open that link in any browser to view the site.
 
