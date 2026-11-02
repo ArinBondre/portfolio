@@ -1,4 +1,4 @@
-# Arin Bondre — Engineering Portfolio
+# Arin Bondre  Portfolio
 
 Personal portfolio site for Arin Bondre (Arcadia High School), showcasing robotics, embedded systems, and hands-on engineering projects.
 
