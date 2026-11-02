@@ -4,7 +4,7 @@ Personal portfolio site for Arin Bondre (Arcadia High School), showcasing roboti
 
 ## Live website
 
-**https://github.com/ArinBondre/portfolio/**
+**[https://github.com/ArinBondre/portfolio/](https://arinbondre.github.io/portfolio/)**
 
 Open that link in any browser to view the site.
 
